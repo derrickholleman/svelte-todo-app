@@ -3,6 +3,7 @@
   import { todos } from "./stores/todoStore";
   import { getTodos } from "./utils/api";
   import Todo from "./Todo.svelte";
+  import AddTodo from "./AddTodo.svelte";
 
   onMount(async () => {
     await getTodos()
@@ -16,7 +17,11 @@
 </script>
 
 <main>
-  <h1 class="text-green-700 text-center text-5xl py-2">Svelte Todo App!</h1>
+  <h1 class="text-green-700 text-center text-5xl pt-2 pb-8">
+    Svelte Todo App!
+  </h1>
+
+  <AddTodo />
 
   {#if todos}
     {#each $todos as todo (todo.id)}
