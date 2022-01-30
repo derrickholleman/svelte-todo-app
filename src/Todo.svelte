@@ -1,5 +1,8 @@
 <script>
   import { todos } from "./stores/todoStore";
+  import { slide, fade } from "svelte/transition";
+
+  // todo object properties
   export let id;
   export let text;
   export let isCompleted;
@@ -27,6 +30,8 @@
 
 <div
   class="text-center border-black border-2 my-4 mx-auto p-2 w-3/4 lg:w-1/2 rounded-md relative"
+  in:slide={{ duration: 600 }}
+  out:fade
 >
   <p class={isCompleted ? checkedClass : uncheckedClass}>{text}</p>
   <div class="flex items-center justify-center">
