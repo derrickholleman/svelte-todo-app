@@ -1,4 +1,5 @@
 <script>
+  export let id;
   export let text;
   export let isCompleted;
 </script>
@@ -8,7 +9,11 @@
 >
   <p class="pb-2 text-2xl text-blue-600">{text}</p>
   <div class="flex items-center justify-center">
-    <label class="mr-2" for="complete">Complete</label>
-    <input type="checkbox" checked={isCompleted} id="complete" />
+    <label class="mr-2" for={`complete-todo-${id}`}>Complete</label>
+    <input
+      type="checkbox"
+      bind:checked={isCompleted}
+      id={`complete-todo-${id}`}
+    />
   </div>
 </div>
