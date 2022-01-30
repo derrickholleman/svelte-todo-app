@@ -7,8 +7,8 @@
   export let text;
   export let isCompleted;
 
-  let checkedClass = "pb-2 text-2xl text-blue-600 line-through";
-  let uncheckedClass = "pb-2 text-2xl text-blue-600";
+  let checkedClass = "pb-2 text-2xl text-blue-600 line-through w-4/5 mx-auto";
+  let uncheckedClass = "pb-2 text-2xl text-blue-600 w-4/5 mx-auto";
 
   const handleCompleteTodo = () => {
     todos.update((currentTodos) => {

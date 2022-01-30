@@ -6,7 +6,7 @@
 </script>
 
 <main>
-  <h1 class="text-green-700 text-center text-5xl pt-2 pb-8">
+  <h1 class="text-green-700 text-center text-5xl pt-2 pb-8 mx-1">
     Svelte Todo App!
   </h1>
 
