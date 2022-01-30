@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear"
+    "dev": "concurrently \"npm run start:server\" \"rollup -c -w\"",
+    "start": "sirv public --no-clear",
+    "start:server": "json-server --watch --port=5001 todos.json"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -18,6 +19,8 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "concurrently": "^7.0.0",
+    "json-server": "^0.17.0",
     "sirv-cli": "^2.0.0"
   }
 }

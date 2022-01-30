@@ -1,0 +1,16 @@
+{
+  "todos": [
+    {
+      "text": "Cut the grass",
+      "isCompleted": false
+    },
+    {
+      "text": "Study coding",
+      "isCompleted": false
+    },
+    {
+      "text": "Wash the dishes",
+      "isCompleted": true
+    }
+  ]
+}
