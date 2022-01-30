@@ -21,7 +21,6 @@ function createTodoStore() {
 
   return {
     subscribe,
-    update,
     addTodo: (newTodo) => update((currentTodos) => [...currentTodos, newTodo]),
     updateCompleted: (todoId, isCompleted) =>
       update((currentTodos) => {
@@ -35,6 +34,11 @@ function createTodoStore() {
     deleteTodo: (todoId) =>
       update((currentTodos) => {
         return currentTodos.filter((todo) => todo.id !== todoId);
+      }),
+    clearCompletedTodos: () =>
+      update((currentTodos) => {
+        // return only todos that are incomplete
+        return currentTodos.filter((todo) => todo.isCompleted === false);
       }),
   };
 }

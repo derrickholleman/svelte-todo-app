@@ -5,10 +5,7 @@
   $: totalTodos = $todos.filter((todo) => !todo.isCompleted).length;
 
   const handleClearCompletedTodos = () => {
-    todos.update((currentTodos) => {
-      // return only todos that are incomplete
-      return currentTodos.filter((todo) => todo.isCompleted === false);
-    });
+    todos.clearCompletedTodos();
   };
 </script>
 
