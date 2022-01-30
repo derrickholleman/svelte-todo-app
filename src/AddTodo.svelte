@@ -28,7 +28,8 @@
       text: text,
       isCompleted: false,
     };
-    todos.update((currentTodos) => [...currentTodos, newTodo]);
+    
+    todos.addTodo(newTodo)
     text = "";
   }
 </script>

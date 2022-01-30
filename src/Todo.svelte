@@ -22,9 +22,7 @@
   };
 
   const handleDeleteTodo = (todoId) => {
-    todos.update((currentTodos) => {
-      return currentTodos.filter((todo) => todo.id !== todoId);
-    });
+    todos.deleteTodo(todoId);
   };
 </script>
 
