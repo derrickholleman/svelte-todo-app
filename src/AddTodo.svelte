@@ -8,9 +8,9 @@
   $: inputLength = text.length;
 
   let btnDisabledClass =
-    "block mx-auto py-2 px-3 my-3 bg-green-600 border rounded-md text-white opacity-50 cursor-default";
+    "block mx-auto py-2 px-3 my-3 bg-green-600 rounded-md text-white opacity-50 cursor-default";
   let btnActiveClass =
-    "block mx-auto py-2 px-3 my-3 bg-green-600 hover:bg-green-500 border rounded-md text-white";
+    "block mx-auto py-2 px-3 my-3 bg-green-600 hover:bg-green-500 rounded-md text-white";
 
   const handleInput = (e) => {
     text = e.target.value;
@@ -33,7 +33,7 @@
   }
 </script>
 
-<form on:submit|preventDefault={handleSubmit} class="text-center pb-4">
+<form on:submit|preventDefault={handleSubmit} class="text-center pb-2">
   <label for="addTodo">Add a Todo</label>
   <input
     type="text"

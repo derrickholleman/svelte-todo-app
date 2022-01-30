@@ -3,6 +3,13 @@
   import AddTodo from "./AddTodo.svelte";
   import { todos } from "./stores/todoStore";
   $: totalTodos = $todos.filter((todo) => !todo.isCompleted).length;
+
+  const handleClearCompletedTodos = () => {
+    todos.update((currentTodos) => {
+      // return only todos that are incomplete
+      return currentTodos.filter((todo) => todo.isCompleted === false);
+    });
+  };
 </script>
 
 <main>
@@ -11,6 +18,13 @@
   </h1>
 
   <AddTodo />
+
+  <div class="text-center mb-4">
+    <button
+      class="bg-red-600 hover:bg-red-400 py-2 px-3 text-white rounded-md"
+      on:click={handleClearCompletedTodos}>Clear Completed Todos</button
+    >
+  </div>
 
   <p class="text-center text-yellow-600 text-lg">
     You have {totalTodos} todos left to do!
