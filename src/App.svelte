@@ -22,7 +22,7 @@
   <div class="text-center mb-4">
     <button
       class="bg-red-600 hover:bg-red-400 py-2 px-3 text-white rounded-md"
-      on:click={handleClearCompletedTodos}>Clear Completed Todos</button
+      on:click={handleClearCompletedTodos}>Clear COMPLETED Todos</button
     >
   </div>
 
