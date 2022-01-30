@@ -1,5 +1,6 @@
 <script>
   import { v4 as uuidv4 } from "uuid";
+  import { todos } from "./stores/todoStore";
 
   let btnDisabled = true;
   let text;
@@ -20,18 +21,12 @@
   };
 
   function addTodo() {
-    fetch("http://localhost:5001/todos", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: uuidv4(),
-        text: text,
-        isCompleted: false,
-      }),
-    });
+    let newTodo = {
+      id: uuidv4(),
+      text: text,
+      isCompleted: false,
+    };
+    todos.update((currentTodos) => [...currentTodos, newTodo]);
     text = "";
   }
 </script>

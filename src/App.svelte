@@ -2,13 +2,7 @@
   import Todo from "./Todo.svelte";
   import AddTodo from "./AddTodo.svelte";
   import { onMount } from "svelte";
-
-  let todos = [];
-
-  onMount(async () => {
-    const todosRes = await fetch("http://localhost:5001/todos");
-    todos = await todosRes.json();
-  });
+  import { todos } from './stores/todoStore'
 </script>
 
 <main>
@@ -19,7 +13,7 @@
   <AddTodo />
 
   {#if todos}
-    {#each todos as todo (todo.id)}
+    {#each $todos as todo (todo.id)}
       <Todo {...todo} />
     {/each}
   {/if}
