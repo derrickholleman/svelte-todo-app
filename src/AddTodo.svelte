@@ -3,7 +3,9 @@
   import { todos } from "./stores/todoStore";
 
   let btnDisabled = true;
-  let text;
+  let text = "";
+
+  $: inputLength = text.length;
 
   let btnDisabledClass =
     "block mx-auto py-2 px-3 my-3 bg-green-600 border rounded-md text-white opacity-50 cursor-default";
@@ -41,6 +43,9 @@
     class="border-black border rounded-md pl-1"
     required
   />
+  {#if inputLength >= 1 && inputLength < 5}
+    <p class="text-sm text-red-700">Todo must be at least 5 characters</p>
+  {/if}
   <button
     type="submit"
     class={btnDisabled ? btnDisabledClass : btnActiveClass}

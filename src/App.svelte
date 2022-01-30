@@ -1,8 +1,8 @@
 <script>
   import Todo from "./Todo.svelte";
   import AddTodo from "./AddTodo.svelte";
-  import { onMount } from "svelte";
-  import { todos } from './stores/todoStore'
+  import { todos } from "./stores/todoStore";
+  $: totalTodos = $todos.length;
 </script>
 
 <main>
@@ -11,7 +11,7 @@
   </h1>
 
   <AddTodo />
-
+  <p class="text-center text-yellow-600 text-lg">You have {totalTodos} todos to do!</p>
   {#if todos}
     {#each $todos as todo (todo.id)}
       <Todo {...todo} />
