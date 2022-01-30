@@ -1,4 +1,5 @@
 <script>
+  export let id;
   export let text;
   export let isCompleted;
 </script>

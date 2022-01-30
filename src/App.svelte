@@ -1,19 +1,7 @@
 <script>
-  import { onMount } from "svelte";
   import { todos } from "./stores/todoStore";
-  import { getTodos } from "./utils/api";
   import Todo from "./Todo.svelte";
   import AddTodo from "./AddTodo.svelte";
-
-  onMount(async () => {
-    await getTodos()
-      .then((todosRes) => {
-        todos.set(todosRes);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  });
 </script>
 
 <main>
