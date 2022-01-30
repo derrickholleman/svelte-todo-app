@@ -24,7 +24,9 @@
   </div>
 
   <p class="text-center text-yellow-600 text-lg">
-    You have {totalTodos} todos left to do!
+    {totalTodos === 1
+      ? `You have ${totalTodos} todo left to do!`
+      : `You have ${totalTodos} todos left to do!`}
   </p>
 
   {#if todos}

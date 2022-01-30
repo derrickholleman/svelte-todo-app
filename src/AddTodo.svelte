@@ -31,6 +31,7 @@
     
     todos.addTodo(newTodo)
     text = "";
+    btnDisabled = true;
   }
 </script>
 
