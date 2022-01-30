@@ -11,14 +11,7 @@
   let uncheckedClass = "pb-2 text-2xl text-blue-600 w-4/5 mx-auto";
 
   const handleCompleteTodo = () => {
-    todos.update((currentTodos) => {
-      let copiedTodos = [...currentTodos];
-      let checkedTodo = copiedTodos.find((todo) => todo.id === id);
-
-      checkedTodo.isCompleted = !isCompleted;
-
-      return copiedTodos;
-    });
+    todos.updateCompleted(id, isCompleted)
   };
 
   const handleDeleteTodo = (todoId) => {

@@ -16,17 +16,27 @@ function createTodoStore() {
       id: 3,
       text: "Wash the dishes",
       isCompleted: true,
-    }
-  ])
+    },
+  ]);
 
   return {
     subscribe,
     update,
     addTodo: (newTodo) => update((currentTodos) => [...currentTodos, newTodo]),
-    deleteTodo: (todoId) => update((currentTodos) => {
-      return currentTodos.filter((todo) => todo.id !== todoId)
-    })
-  }
+    updateCompleted: (todoId, isCompleted) =>
+      update((currentTodos) => {
+        let copiedTodos = [...currentTodos];
+        let checkedTodo = copiedTodos.find((todo) => todo.id === todoId);
+
+        checkedTodo.isCompleted = !isCompleted;
+
+        return copiedTodos;
+      }),
+    deleteTodo: (todoId) =>
+      update((currentTodos) => {
+        return currentTodos.filter((todo) => todo.id !== todoId);
+      }),
+  };
 }
 
-export const todos = createTodoStore()
+export const todos = createTodoStore();
