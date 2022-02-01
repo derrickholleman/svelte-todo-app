@@ -7,6 +7,9 @@
   const handleClearCompletedTodos = () => {
     todos.clearCompletedTodos();
   };
+
+  // call this to use Local Storage
+  todos.useLocalStorage()
 </script>
 
 <main>
