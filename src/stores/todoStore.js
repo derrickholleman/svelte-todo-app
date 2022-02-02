@@ -25,11 +25,13 @@ function createTodoStore(key, todosArr) {
         return currentTodos.filter((todo) => todo.isCompleted === false);
       }),
     useLocalStorage: () => {
+      // get todos from local storage
       const todosJSON = localStorage.getItem(key);
       if (todosJSON) {
+        // set the store with todos fetched from local storage
         set(JSON.parse(todosJSON));
       }
-
+      // take the stored todos and update local storage
       subscribe((storedTodos) => {
         localStorage.setItem(key, JSON.stringify(storedTodos));
       });
