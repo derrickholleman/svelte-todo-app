@@ -26,12 +26,12 @@
 >
   <p class={isCompleted ? checkedClass : uncheckedClass}>{text}</p>
   <div class="flex items-center justify-center">
-    <label class="mr-2" for={`complete-todo-${id}`}>Complete</label>
+    <label class="mr-2" for={`complete-todo-${text}`}>Complete</label>
     <input
       type="checkbox"
       on:click={handleCompleteTodo}
       bind:checked={isCompleted}
-      id={`complete-todo-${id}`}
+      id={`complete-todo-${text}`}
     />
   </div>
   <button
