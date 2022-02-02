@@ -5,7 +5,7 @@ function createTodoStore(key, todosArr) {
 
   return {
     subscribe,
-    addTodo: (newTodo) => update((currentTodos) => [...currentTodos, newTodo]),
+    addTodo: (newTodo) => update((currentTodos) => [newTodo, ...currentTodos]),
     updateCompleted: (todoId, isCompleted) =>
       update((currentTodos) => {
         let copiedTodos = [...currentTodos];
