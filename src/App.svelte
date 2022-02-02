@@ -12,7 +12,6 @@
     "bg-red-600 hover:bg-red-400 py-2 px-3 text-white rounded-md";
 
   const handleClearCompletedTodos = () => {
-    console.log('hello')
     todos.clearCompletedTodos();
   };
 
@@ -31,8 +30,7 @@
     <button
       class={btnDisabled ? btnDisabledClass : btnActiveClass}
       on:click={handleClearCompletedTodos}
-      disabled={btnDisabled}
-      >Clear COMPLETED Todos</button
+      disabled={btnDisabled}>Clear COMPLETED Todos</button
     >
   </div>
 
