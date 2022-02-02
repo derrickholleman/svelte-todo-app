@@ -2,7 +2,7 @@
   import Todo from "./Todo.svelte";
   import AddTodo from "./AddTodo.svelte";
   import { todos } from "./stores/todoStore";
-  $: totalTodos = $todos.filter((todo) => !todo.isCompleted).length;
+  $: totalTodosLeft = $todos.filter((todo) => !todo.isCompleted).length;
 
   const handleClearCompletedTodos = () => {
     todos.clearCompletedTodos();
@@ -27,9 +27,9 @@
   </div>
 
   <p class="text-center text-yellow-600 text-lg">
-    {totalTodos === 1
-      ? `You have ${totalTodos} todo left to do!`
-      : `You have ${totalTodos} todos left to do!`}
+    {totalTodosLeft === 1
+      ? `You have ${totalTodosLeft} todo left to do!`
+      : `You have ${totalTodosLeft} todos left to do!`}
   </p>
 
   {#if todos}
