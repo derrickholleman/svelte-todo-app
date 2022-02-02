@@ -4,12 +4,20 @@
   import { todos } from "./stores/todoStore";
   $: totalTodosLeft = $todos.filter((todo) => !todo.isCompleted).length;
 
+  // if no todo is marked as completed, disable 'clear completed' button
+  $: btnDisabled = $todos.every((todo) => todo.isCompleted === false);
+  let btnDisabledClass =
+    "bg-red-400 py-2 px-3 text-white rounded-md cursor-default";
+  let btnActiveClass =
+    "bg-red-600 hover:bg-red-400 py-2 px-3 text-white rounded-md";
+
   const handleClearCompletedTodos = () => {
+    console.log('hello')
     todos.clearCompletedTodos();
   };
 
   // call this to use Local Storage
-  todos.useLocalStorage()
+  todos.useLocalStorage();
 </script>
 
 <main>
@@ -21,8 +29,10 @@
 
   <div class="text-center mb-4">
     <button
-      class="bg-red-600 hover:bg-red-400 py-2 px-3 text-white rounded-md"
-      on:click={handleClearCompletedTodos}>Clear COMPLETED Todos</button
+      class={btnDisabled ? btnDisabledClass : btnActiveClass}
+      on:click={handleClearCompletedTodos}
+      disabled={btnDisabled}
+      >Clear COMPLETED Todos</button
     >
   </div>
 
