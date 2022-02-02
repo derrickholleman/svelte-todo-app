@@ -12,12 +12,8 @@
   let btnActiveClass =
     "block mx-auto py-2 px-3 my-3 bg-green-600 hover:bg-green-500 rounded-md text-white";
 
-  function trim(value) {
-    return value.replace(/^\s+|\s+$/g, "");
-  }
-
   const handleInput = (e) => {
-    text = trim(e.target.value);
+    text = e.target.value;
 
     if (text.length >= 5) {
       btnDisabled = false;
@@ -32,8 +28,8 @@
       text: text,
       isCompleted: false,
     };
-
-    todos.addTodo(newTodo);
+    
+    todos.addTodo(newTodo)
     text = "";
     btnDisabled = true;
   }
