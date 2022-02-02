@@ -44,6 +44,8 @@
     id="addTodo"
     class="border-black border rounded-md pl-1"
     required
+    placeholder="Today I need to..."
+    autocomplete="off"
   />
   {#if inputLength >= 1 && inputLength < 5}
     <p class="text-sm text-red-700">Todo must be at least 5 characters</p>
